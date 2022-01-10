@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.proyecto.proyecto.entity;
 
 import javax.persistence.Entity;
@@ -16,35 +15,35 @@ import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "tipousuario")
-@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class TipoUsuarioEntity {
 
-	@Id
-	private Long id;
+    @Id
+    private Long id;
 
-	private String nombre;
+    private String nombre;
 
-	@OneToMany(mappedBy = "tipousuario")
-	private List<UsuarioEntity> usuarios = new ArrayList<>();
+    @OneToMany(mappedBy = "tipousuario")
+    private List<UsuarioEntity> usuarios = new ArrayList<>();
 
-	public TipoUsuarioEntity() {
-	}
+    public TipoUsuarioEntity() {
+    }
 
-	public TipoUsuarioEntity(Long id, String nombre) {
-		this.id = id;
-		this.nombre = nombre;
-	}
+    public TipoUsuarioEntity(Long id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
 
-	public Long getId() {
-		return this.id;
-	}
+    public Long getId() {
+        return this.id;
+    }
 
-	public String getNombre() {
-		return this.nombre;
-	}
+    public String getNombre() {
+        return this.nombre;
+    }
 
-	public int getUsuarios() {
-		return usuarios.size();
-	}
+    public int getUsuarios() {
+        return usuarios.size();
+    }
 
 }

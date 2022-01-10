@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.proyecto.proyecto.entity;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -19,6 +19,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 /**
  *
  * @author javav
@@ -54,8 +55,7 @@ public class UsuarioEntity implements Serializable {
     private TipoUsuarioEntity tipousuario;
 
     @OneToMany(mappedBy = "usuario")
-    private List<PaqueteEntity> paquetes  = new ArrayList<>();
-
+    private List<PaqueteEntity> paquetes = new ArrayList<>();
 
     public UsuarioEntity() {
     }
@@ -128,7 +128,6 @@ public class UsuarioEntity implements Serializable {
         this.email = email;
     }
 
-
     public String getToken() {
         return token;
     }
@@ -161,7 +160,7 @@ public class UsuarioEntity implements Serializable {
         this.tipousuario = tipousuario;
     }
 
-public int getPaquetes() {
+    public int getPaquetes() {
         return paquetes.size();
     }
 
