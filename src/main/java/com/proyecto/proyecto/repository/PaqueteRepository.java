@@ -13,4 +13,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author javav
  */
 public interface PaqueteRepository extends JpaRepository<PaqueteEntity, Long> {
+    
+        
+            Long findByPaqueteIdUsuarioCount(Long id_usuario);
+            
+                PaqueteEntity findByPaqueteIdUsuarioView(Long id_usuario, Long id_paquete);
+
+
+
 }

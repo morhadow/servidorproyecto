@@ -6,6 +6,8 @@
 package com.proyecto.proyecto.repository;
 
 import com.proyecto.proyecto.entity.EmpresaEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -14,4 +16,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface EmpresaRepository extends JpaRepository<EmpresaEntity, Long> {
 
+    public Page<EmpresaEntity> findByNombreIgnoreCaseContaining(String strFilter, Pageable oPageable);
+
+    public Page<EmpresaEntity> findById(Long longEmpresa, Pageable oPageable);
+
+    public Page<EmpresaEntity> findByIdAndNombreIgnoreCaseContaining(Long longEmpresa, String strFilter, Pageable oPageable);
+
+    
 }

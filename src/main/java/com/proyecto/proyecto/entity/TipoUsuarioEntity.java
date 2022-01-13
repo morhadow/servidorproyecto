@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.OneToMany;
@@ -16,7 +17,7 @@ import javax.persistence.OneToMany;
 @Entity
 @Table(name = "tipousuario")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class TipoUsuarioEntity {
+public class TipoUsuarioEntity implements Serializable {
 
     @Id
     private Long id;

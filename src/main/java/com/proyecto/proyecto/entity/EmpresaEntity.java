@@ -5,7 +5,6 @@
  */
 package com.proyecto.proyecto.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -15,7 +14,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -26,7 +24,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "empresa")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class EmpresaEntity {
+public class EmpresaEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
