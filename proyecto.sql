@@ -24,6 +24,10 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`tipousuario` (
   `nombre` VARCHAR(45) NOT NULL)
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+INSERT INTO `tipousuario` (`id`, `nombre`) VALUES
+(1, 'admin'),
+(2, 'user');
+
 -- -----------------------------------------------------
 -- Table `mydb`.`usuario`
 -- -----------------------------------------------------
@@ -40,6 +44,10 @@ CREATE TABLE IF NOT EXISTS `proyecto`.`usuario` (
   `activo` TINYINT(1) NOT NULL,
   `id_tipousuario` INT NOT NULL)
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `usuario` (`id`,  `nombre`, `apellido1`, `apellido2`, `login`, `password`, `email`, `id_tipousuario`, `token`, `validado`, `activo`) VALUES
+(1, 'Javier', 'Mocholi', 'Ortega', 'Javier', '34acb26652f1efa5e9ddd72cb293d0f6bc2a414398c0e770644510d619ad99ad', 'javier@gmail.com',  1, NULL, 1, 0),
+(2,  'Juan', 'Mocholí', '', 'Soler', '34acb26652f1efa5e9ddd72cb293d0f6bc2a414398c0e770644510d619ad99ad', 'juan@gmail.com', 2, NULL, 1, 0);
 
 -- -----------------------------------------------------
 -- Table `mydb`.`empresa`
